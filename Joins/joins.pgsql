@@ -35,3 +35,23 @@ WHERE Orders.CustomerID IS NULL;
 -- FROM Orders
 -- RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
 -- ORDER BY Orders.OrderID;
+
+SELECT *
+FROM Customers
+FULL JOIN Orders
+ON Customers.CustomerID = Orders.CustomerID;
+
+
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City 
+ORDER BY A.City;
+
+-- SELECT 
+--     E.EmployeeName AS Employee, 
+--     M.EmployeeName AS Manager
+-- FROM Employees E
+-- LEFT JOIN Employees M 
+--     ON E.ManagerID = M.EmployeeID;
+--self join so as to see manager employee relationship in employees table
